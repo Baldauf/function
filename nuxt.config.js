@@ -19,7 +19,17 @@ const config = {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'stylesheet', href: 'https://use.typekit.net/uuy0bkd.css' }
-    ]
+    ],
+    script: [
+      {
+        src: 'https://js.hs-scripts.com/7156206.js',
+        type: 'text/javascript',
+        id: 'hs-script-loader',
+        defer: true,
+        async: true
+      }
+    ],
+    __dangerouslyDisableSanitizers: ['script']
   },
 
   env: {
@@ -86,7 +96,7 @@ const config = {
   */
   modules: [
     ['bootstrap-vue/nuxt', { css: false }],
-    ['storyblok-nuxt', 
+    ['storyblok-nuxt',
       { accessToken: blokToken, cacheProvider: 'memory' }
     ],
     // ['@nuxtjs/google-analytics', {
@@ -99,7 +109,7 @@ const config = {
     routes: function (callback) {
       const per_page = 100
       let cache_version = 0
-      
+
       let page = 1
       let routes = ['/']
 
@@ -108,7 +118,7 @@ const config = {
 
         // timestamp of latest publish
         cache_version = space_res.data.space.version
-      
+
         // Call first Page of the Links API: https://www.storyblok.com/docs/Delivery-Api/Links
         axios.get(`https://api.storyblok.com/v1/cdn/stories?token=${blokToken}&per_page=${per_page}&page=${page}&cv=${cache_version}`).then((res) => {
           Object.keys(res.data.stories).forEach((key) => {
@@ -125,7 +135,7 @@ const config = {
           }
 
           // Since we know the total we now can pregenerate all requests we need to get all Links
-          let contentRequests = [] 
+          let contentRequests = []
           for (let page = 2; page <= maxPage; page++) {
             contentRequests.push(axios.get(`https://api.storyblok.com/v1/cdn/stories?token=${blokToken}&per_page=${per_page}&page=${page}`))
           }
@@ -139,12 +149,12 @@ const config = {
                 }
               })
             })
-          
+
             callback(null, routes)
           })).catch(callback)
         })
-      }) 
-    }  
+      })
+    }
   }
 }
 
