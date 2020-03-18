@@ -99,9 +99,9 @@ const config = {
     ['storyblok-nuxt',
       { accessToken: blokToken, cacheProvider: 'memory' }
     ],
-    // ['@nuxtjs/google-analytics', {
-    //   id: 'UA-55889031-1'
-    // }],
+    ['@nuxtjs/google-analytics', {
+      id: 'UA-161219010-1'
+    }]
   ],
 
   generate: {
