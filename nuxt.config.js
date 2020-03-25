@@ -14,7 +14,8 @@ const config = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Function'}
+      { hid: 'description', name: 'description', content: 'Function'},
+      { name: 'google-site-verification', content: 'J9gHhz-CTRBHATY-adzz0BhqWj2p2xQ63OjBWe7RV2w' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
@@ -101,6 +102,16 @@ const config = {
     ],
     ['@nuxtjs/google-analytics', {
       id: 'UA-161219010-1'
+    }],
+    ['nuxt-facebook-pixel-module', {
+      track: 'PageView',
+      pixelId: '534819730567413',
+      disabled: false
+    }],
+    ['nuxt-linkedin-pixel-module', {
+      track: 'PageView',
+      partnerId: '1830834',
+      disabled: false
     }]
   ],
 
