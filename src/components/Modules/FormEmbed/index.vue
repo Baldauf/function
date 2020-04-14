@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div :id=`hubspotform-${this.blok.formId}`>
+    <div :id="'hubspotform-' + blok.formId">
     </div>
   </div>
 </template>
@@ -20,7 +20,7 @@ export default {
     hbspt.forms.create({
             portalId: this.blok.portalId,
             formId: this.blok.formId,
-            target: `'#hubspotform-'${this.blok.formId}`
+            target: '#hubspotform-' + this.blok.formId
     })
   }
 }
