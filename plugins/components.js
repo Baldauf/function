@@ -14,6 +14,7 @@ import FaqList from '~/src/components/Modules/FaqList'
 import FeaturedCardList from '~/src/components/Modules/FeaturedCardList'
 import Footer from '~/src/components/Modules/Footer'
 import Form from '~/src/components/Modules/Forms'
+import FormEmbed from '~/src/components/Modules/FormEmbed'
 import IconTextList from '~/src/components/Modules/IconTextList'
 import IconTextListCollapse from '~/src/components/Modules/IconTextList/collapse'
 import IFrame from '~/src/components/Modules/IFrame'
@@ -52,6 +53,7 @@ Vue.component('blok-cta', Cta)
 Vue.component('blok-faq-list', FaqList)
 Vue.component('blok-featured-card-list', FeaturedCardList)
 Vue.component('blok-form', Form)
+Vue.component('blok-hubspot-form', FormEmbed)
 Vue.component('blok-footer', Footer)
 Vue.component('blok-icon-text-list', IconTextList)
 Vue.component('blok-icon-text-list-collapse', IconTextListCollapse)
