@@ -1,6 +1,7 @@
 <template>
   <div>
-    foo
+    <div :id=`hubspotform-${this.blok.formId}`>
+    </div>
   </div>
 </template>
 
@@ -15,16 +16,11 @@ export default {
       default: 'FormEmbed'
     }
   },
-  created () {
-    let hsScript = document.createElement('script')
-    hsScript.setAttribute('src',"//js.hsforms.net/forms/v2.js")
-    document.head.appendChild(hsScript)
-  },
   mounted () {
-    console.log('hit')
     hbspt.forms.create({
-            portalId: "7156206",
-            formId: "d5dd2eec-b878-4b06-aa0d-81dcdf94a2a8"
+            portalId: this.blok.portalId,
+            formId: this.blok.formId,
+            target: `'#hubspotform-'${this.blok.formId}`
     })
   }
 }

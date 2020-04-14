@@ -28,7 +28,13 @@ const config = {
         id: 'hs-script-loader',
         defer: true,
         async: true
-      }
+      },
+      {
+        src: 'https://js.hsforms.net/forms/v2.js',
+        type: 'text/javascript',
+        async: true
+      },
+
     ],
     __dangerouslyDisableSanitizers: ['script']
   },
