@@ -19,19 +19,6 @@ export default {
       default: 'FormEmbed'
     }
   },
-  computed: {
-    computeCls () {
-      let arr = []
-      if (this.blok && this.blok.classes) {
-        arr = this.blok.classes.split(',')
-      }
-
-      return arr
-    },
-    BEM_B () {
-      return BEM.methods.BlockCls(this.name, this.computeCls)
-    }
-  },
   mounted () {
     hbspt.forms.create({
             portalId: this.blok.portalId,
