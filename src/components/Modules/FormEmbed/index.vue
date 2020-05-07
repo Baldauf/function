@@ -1,6 +1,9 @@
 <template>
   <div>
-    <div :id="'hubspotform-' + blok.formId">
+    <div
+      :class="BEM_B"
+      :id="'hubspotform-' + blok.formId"
+    >
     </div>
   </div>
 </template>
