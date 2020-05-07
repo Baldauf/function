@@ -1,6 +1,9 @@
 <template>
   <div>
-    <div :id="'hubspotform-' + blok.formId">
+    <div
+      :class="BEM_B"
+      :id="'hubspotform-' + blok.formId"
+    >
     </div>
   </div>
 </template>
@@ -14,6 +17,19 @@ export default {
     name: {
       type: String,
       default: 'FormEmbed'
+    }
+  },
+  computed: {
+    computeCls () {
+      let arr = []
+      if (this.blok && this.blok.classes) {
+        arr = this.blok.classes.split(',')
+      }
+
+      return arr
+    },
+    BEM_B () {
+      return BEM.methods.BlockCls(this.name, this.computeCls)
     }
   },
   mounted () {
