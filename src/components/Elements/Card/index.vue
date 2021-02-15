@@ -147,7 +147,7 @@ export default {
         // if story + matchesDomain, route story
         path = path.replace('zh-cn/zh_cn/', '/zh-cn/')
 
-        if (this.isStaffMember) {
+        if (this.isStaffMember && this.$route.path.endsWith('about/')) {
           path = path.replace('about/', '')
         }
 
